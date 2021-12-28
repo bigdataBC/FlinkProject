@@ -14,7 +14,7 @@ import utils.MyKafkaUtil;
  * @date 2021/12/27
  */
 public class FlinkCDC {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //1.获取执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
