@@ -20,7 +20,7 @@ public class FlinkCDC {
         env.setParallelism(1);
 
         //1.1 设置CK&状态后端
-        //env.setStateBackend(new FsStateBackend("hdfs://hadoop102:8020/gmall-flink-210325/ck"));
+        //env.setStateBackend(new FsStateBackend("hdfs://node1:8020/gmall-flink-210325/ck"));
         //env.enableCheckpointing(5000L);
         //env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
         //env.getCheckpointConfig().setCheckpointTimeout(10000L);
