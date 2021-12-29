@@ -14,10 +14,15 @@ public class JdbcUtil {
 
     /**
      * select * from t1;
-     * xx,xx,xx
-     * xx,xx,xx
+     * xxx
+     * @param connection
+     * @param querySql 查询语句
+     * @param clz 为了让 T 更好地赋值（更方便构建泛型）
+     * @param underScoreToCamel 是否需要把下划线转换为驼峰命名规则 a_b --> aB
+     * @param <T> 泛型
+     * @return 查询结果 List<T> 集合
+     * @throws Exception
      */
-
     public static <T> List<T> queryList(Connection connection, String querySql, Class<T> clz, boolean underScoreToCamel) throws Exception {
 
         //创建集合用于存放查询结果数据

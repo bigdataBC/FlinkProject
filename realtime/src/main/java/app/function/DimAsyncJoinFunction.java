@@ -1,0 +1,14 @@
+package app.function;
+
+import com.alibaba.fastjson.JSONObject;
+
+import java.text.ParseException;
+
+public interface DimAsyncJoinFunction<T> {
+
+    //获取数据中的所要关联维度的主键
+    String getKey(T input);
+    //关联事实数据和维度数据
+    void join(T input, JSONObject dimInfo) throws ParseException;
+
+}
