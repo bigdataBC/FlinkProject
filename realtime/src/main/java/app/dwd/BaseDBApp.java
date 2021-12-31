@@ -72,7 +72,7 @@ public class BaseDBApp {
                 .deserializer(new CustomerDeserialization())
                 .build();
         DataStreamSource<String> tableProcessStrDS = env.addSource(sourceFunction);
-//        tableProcessStrDS.print("tableProcessStrDS>>>");
+        tableProcessStrDS.print("tableProcessStrDS>>>");
         MapStateDescriptor<String, TableProcess> mapStateDescriptor = new MapStateDescriptor<>("map-state", String.class, TableProcess.class);
         BroadcastStream<String> broadcastStream = tableProcessStrDS.broadcast(mapStateDescriptor);
 

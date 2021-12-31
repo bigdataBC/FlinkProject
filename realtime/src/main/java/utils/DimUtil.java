@@ -63,17 +63,18 @@ public class DimUtil {
         Class.forName(GmallConfig.PHOENIX_DRIVER);
         Connection connection = DriverManager.getConnection(GmallConfig.PHOENIX_SERVER);
 
-//        long start = System.currentTimeMillis();
-        System.out.println(getDimInfo(connection, "DIM_BASE_TRADEMARK", "15"));
-//        long end = System.currentTimeMillis();
-//        System.out.println(getDimInfo(connection, "DIM_USER_INFO", "143"));
-//        long end2 = System.currentTimeMillis();
-//        System.out.println(getDimInfo(connection, "DIM_USER_INFO", "143"));
-//        long end3 = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
+//        System.out.println(getDimInfo(connection, "DIM_BASE_TRADEMARK", "15"));
+        long end = System.currentTimeMillis();
+        System.out.println(getDimInfo(connection, "DIM_USER_INFO", "1073"));
+        System.out.println(getDimInfo(connection, "DIM_BASE_PROVINCE", "35"));
+        long end2 = System.currentTimeMillis();
+        System.out.println(getDimInfo(connection, "DIM_USER_INFO", "1073"));
+        long end3 = System.currentTimeMillis();
 
-//        System.out.println(end - start);
-//        System.out.println(end2 - end);
-//        System.out.println(end3 - end2);
+        System.out.println(end - start);
+        System.out.println(end2 - end);
+        System.out.println(end3 - end2);
 
         connection.close();
 

@@ -94,7 +94,7 @@ public class BaseLogApp {
                 return value;
             }
         });
-        jsonObjWithNewFlagDS.print("jsonObjWithNewFlagDS>>>");
+//        jsonObjWithNewFlagDS.print("jsonObjWithNewFlagDS>>>");
 
         //TODO 5.分流  侧输出流  页面：主流  启动：侧输出流  曝光：侧输出流
         OutputTag<String> startOutputTag = new OutputTag<String>("startDS") {

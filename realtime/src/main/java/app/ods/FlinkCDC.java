@@ -33,11 +33,12 @@ public class FlinkCDC {
         DebeziumSourceFunction<String> sourceFunction = MySQLSource.<String>builder()
                 .hostname("node1")
                 .port(3306)
-                .username("root")
-                .password("000000")
+                .username("lft")
+                .password("123456")
                 .databaseList("gmall2021")
                 .deserializer(new CustomerDeserialization())
-                .startupOptions(StartupOptions.latest())
+                .startupOptions(StartupOptions.initial())
+//                .startupOptions(StartupOptions.latest())
                 .build();
         DataStreamSource<String> streamSource = env.addSource(sourceFunction);
 

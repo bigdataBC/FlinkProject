@@ -62,6 +62,8 @@ public class ClickHouseUtil {
                 new JdbcConnectionOptions.JdbcConnectionOptionsBuilder()
                         .withDriverName(GmallConfig.CLICKHOUSE_DRIVER)
                         .withUrl(GmallConfig.CLICKHOUSE_URL)
+                        .withUsername("default")
+                        .withPassword("123456")
                         .build());
 
     }

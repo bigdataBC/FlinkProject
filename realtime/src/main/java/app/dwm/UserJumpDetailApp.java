@@ -84,7 +84,7 @@ public class UserJumpDetailApp {
                     @Override
                     public boolean filter(JSONObject value) throws Exception {
                         String lastPageId = value.getJSONObject("page").getString("last_page_id");
-                        return lastPageId == null && lastPageId.length() <= 0;
+                        return lastPageId == null || lastPageId.length() <= 0;
                     }
                 })
                 .times(2)
