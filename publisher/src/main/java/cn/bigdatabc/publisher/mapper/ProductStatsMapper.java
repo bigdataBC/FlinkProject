@@ -9,7 +9,7 @@ import java.util.Map;
 
 public interface ProductStatsMapper {
 
-    @Select("select sum(order_amount) from product_stats_210325 where toYYYYMMDD(stt)=#{date}")
+    @Select("select sum(order_amount) from product_stats_2021 where toYYYYMMDD(stt)=#{date}")
     BigDecimal selectGmv(int date);
 
     /**
@@ -23,7 +23,7 @@ public interface ProductStatsMapper {
      *
      * Map[("tm_name"->"苹果"),(order_amount->279501)]  ==> [("苹果"->279501),...]
      */
-    @Select("select tm_name,sum(order_amount) order_amount from product_stats_210325 where toYYYYMMDD(stt)=#{date} group by tm_name order by order_amount desc limit #{limit}")
+    @Select("select tm_name,sum(order_amount) order_amount from product_stats_2021 where toYYYYMMDD(stt)=#{date} group by tm_name order by order_amount desc limit #{limit}")
     List<Map> selectGmvByTm(@Param("date") int date, @Param("limit") int limit);
 
 }
